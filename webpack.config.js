@@ -20,9 +20,10 @@ module.exports = {
     ],
   },
   output: {
+    filename: '[name].js',
+    chunkFilename: '[contenthash].js',
+    publicPath: '../dist/',
     libraryTarget: 'umd',
-    globalObject: 'typeof self !== \'undefined\' ? self : this', // https://github.com/webpack/webpack/issues/6522#issuecomment-371120689
-    filename: 'main.js',
     path: path.resolve(__dirname, 'dist'),
   },
 };
