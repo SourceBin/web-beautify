@@ -1,7 +1,7 @@
 /* eslint-disable @typescript-eslint/no-var-requires, @typescript-eslint/no-require-imports */
 const path = require('path');
 
-module.exports = {
+module.exports = (_, argv) => ({
   entry: './src/index',
   mode: 'development',
   devtool: 'eval',
@@ -22,8 +22,8 @@ module.exports = {
   output: {
     filename: '[name].js',
     chunkFilename: '[contenthash].js',
-    publicPath: '../dist/',
+    publicPath: argv.mode === 'production' ? '' : '../dist/',
     libraryTarget: 'umd',
     path: path.resolve(__dirname, 'dist'),
   },
-};
+});
