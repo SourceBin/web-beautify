@@ -4,7 +4,7 @@
   "main": "dist/main.js",
   "scripts": {
     "dev": "webpack --watch",
-    "build": "webpack -p --devtool false",
+    "build": "webpack -p",
     "lint": "eslint --ignore-path .gitignore .",
     "test": "npm run build && npm run lint",
     "prepublishOnly": "npm run build"
