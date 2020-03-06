@@ -1,13 +1,8 @@
-function parser(name: string): () => Promise<any> {
-  return () => import(`prettier/parser-${name}.js`);
+function parser(name) {
+  return () => importScripts(`prettier/parser-${name}.js`);
 }
 
-interface Parser {
-  name: string;
-  import: () => Promise<any>;
-}
-
-export const parsers: { [key: string]: Parser } = {
+export const parsers = {
   javascript: {
     name: 'babel',
     import: parser('babylon'),

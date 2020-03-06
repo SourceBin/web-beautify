@@ -1,5 +1,8 @@
 module.exports = {
-  extends: '@syntek/syntek/typescript',
+  extends: '@syntek/syntek/index',
+  env: {
+    worker: true,
+  },
   rules: {
     'import/prefer-default-export': 'off',
   },
