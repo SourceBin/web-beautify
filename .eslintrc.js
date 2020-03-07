@@ -9,4 +9,12 @@ module.exports = {
   rules: {
     'import/prefer-default-export': 'off',
   },
+  overrides: [
+    {
+      files: ['examples/**'],
+      rules: {
+        'import/no-unresolved': 'off',
+      },
+    },
+  ],
 };
