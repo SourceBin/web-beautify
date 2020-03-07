@@ -51,4 +51,8 @@ export const parsers = {
     name: 'yaml',
     import: prettier('yaml'),
   },
+  php: {
+    name: 'php',
+    import: () => [import('@prettier/plugin-php/standalone')],
+  },
 };
