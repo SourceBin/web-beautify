@@ -1,6 +1,6 @@
 import Worker from './beautify.worker.js';
 
-const worker = new Worker();
+export const worker = new Worker();
 
 worker.onmessage = (e) => {
   console.log(e.data);

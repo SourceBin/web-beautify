@@ -1,54 +1,54 @@
-function parser(name) {
-  return () => import(`prettier/parser-${name}.js`);
+function prettier(...names) {
+  return () => names.map(name => import(`prettier/parser-${name}.js`));
 }
 
 export const parsers = {
   javascript: {
     name: 'babel',
-    import: parser('babylon'),
+    import: prettier('babylon'),
   },
   typescript: {
     name: 'typescript',
-    import: parser('typescript'),
+    import: prettier('typescript'),
   },
   css: {
     name: 'css',
-    import: parser('postcss'),
+    import: prettier('postcss'),
   },
   scss: {
     name: 'scss',
-    import: parser('postcss'),
+    import: prettier('postcss'),
   },
   less: {
     name: 'less',
-    import: parser('postcss'),
+    import: prettier('postcss'),
   },
   json: {
     name: 'json',
-    import: parser('babylon'),
+    import: prettier('babylon'),
   },
   json5: {
     name: 'json5',
-    import: parser('babylon'),
+    import: prettier('babylon'),
   },
   graphql: {
     name: 'graphql',
-    import: parser('graphql'),
+    import: prettier('graphql'),
   },
   markdown: {
     name: 'markdown',
-    import: parser('markdown'),
+    import: prettier('markdown'),
   },
   html: {
     name: 'html',
-    import: parser('html'),
+    import: prettier('html', 'babylon', 'postcss'),
   },
   vue: {
     name: 'vue',
-    import: parser('html'),
+    import: prettier('html', 'babylon', 'postcss'),
   },
   yaml: {
     name: 'yaml',
-    import: parser('yaml'),
+    import: prettier('yaml'),
   },
 };
