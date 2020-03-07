@@ -1,5 +1,5 @@
 function parser(name) {
-  return () => importScripts(`prettier/parser-${name}.js`);
+  return () => import(`prettier/parser-${name}.js`);
 }
 
 export const parsers = {
