@@ -1,14 +1,10 @@
 {
   "name": "@sourcebin/web-beautify",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "src/index.js",
   "scripts": {
     "lint": "eslint --ignore-path .gitignore .",
     "test": "npm run lint"
-  },
-  "dependencies": {
-    "@prettier/plugin-php": "^0.13.0",
-    "prettier": "^1.19.1"
   },
   "devDependencies": {
     "@syntek/eslint-config-syntek": "^2.0.2",

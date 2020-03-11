@@ -1,14 +1,14 @@
-import * as prettier from 'prettier/standalone';
+/* globals prettier */
 
+import { unpkgPrettier } from './unpkg.js';
 import { parsers } from './parsers.js';
 
-export async function beautify(source, language) {
-  const parser = parsers[language];
-  const plugins = await Promise.all(parser.import());
+unpkgPrettier('standalone.js');
 
+export function beautify(source, language) {
   return prettier.format(source, {
-    plugins,
-    parser: parser.name,
+    parser: language,
+    plugins: [{ parsers }],
     singleQuote: true,
   });
 }

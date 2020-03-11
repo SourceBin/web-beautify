@@ -8,5 +8,5 @@ worker.onmessage = (e) => {
 
 worker.postMessage({
   source: 'const \n x \n = (((\n 5 \n + \n 10)))',
-  language: 'javascript',
+  language: 'babel',
 });
